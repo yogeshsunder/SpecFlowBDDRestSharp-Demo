@@ -13,13 +13,13 @@ namespace Tests
     [Binding]
     public class CreateUserStepDefinitions
     {
-        private CreateUserReq createUserReq;
+        private createUserReq createUserReq;
         private RestResponse response;
         private ScenarioContext scenarioContext;
         private HttpStatusCode statusCode;
         private APIClient api;
 
-        public CreateUserStepDefinitions(CreateUserReq createUserReq, ScenarioContext scenarioContext)
+        public CreateUserStepDefinitions(createUserReq createUserReq, ScenarioContext scenarioContext)
         {
             this.createUserReq = createUserReq;
             this.scenarioContext = scenarioContext;
@@ -39,8 +39,8 @@ namespace Tests
         [When(@"Send request to create user")]
         public async Task WhenSendRequestToCreateUser()
         {
-            createUserReq = scenarioContext.Get<CreateUserReq>("createUser_payload");
-            response = await api.CreateUser<CreateUserReq>(createUserReq);
+            createUserReq = scenarioContext.Get<createUserReq>("createUser_payload");
+            response = await api.CreateUser<createUserReq>(createUserReq);
         }
 
         [Then(@"Validate user is created")]
